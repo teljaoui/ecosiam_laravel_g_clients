@@ -17,6 +17,7 @@ class ClientController extends Controller
     }
 
     public function store(Request $request){
+       // dd($request);
         Client::create([
             'nom'=> $request->nom,
             'prenom' =>  $request->prenom,
@@ -24,6 +25,13 @@ class ClientController extends Controller
             'adresse' => $request->adresse
         ]);
 
+        return redirect('/');
+    }
+
+    public function delete($id){
+        $client = Client::find($id);
+        $client->delete();
+        
         return redirect('/');
     }
 }

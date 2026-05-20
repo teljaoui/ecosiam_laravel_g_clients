@@ -23,7 +23,7 @@
                 <th>{{$client->email}}</th>
                 <th>{{$client->adresse}}</th>
                 <th>
-
+                    <a href="/delete/{{ $client->id }}">supprimer</a>
                 </th>
             </tr>
         @endforeach
